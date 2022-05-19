@@ -2,7 +2,9 @@
 {% load static %}
 
 
-{% block style %}{% endblock style %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'baseapp/baseapp.css' %}">
+{% endblock style %}
 
 
 {% block title %}
@@ -12,7 +14,10 @@ Home
 
 {% block content %}
 
-<h1>HOME PAGE</h1>
+<img id="banner" src="{% static 'images/real_estate_banner.jpg' %}" alt="">
+<div class="container">
+
+</div>
 
 {% endblock content %}
 

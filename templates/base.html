@@ -7,13 +7,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
     {% block style %}{% endblock style %}
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
+    <div id="navbar" class="container-fluid">
+        <div class="row">
+            <div id="navbar-menu">
+                <a id="navbar-menu-toggle" href="">
+                    <img src="{% static 'images/menu.png' %}" alt="">
+                </a>
+            </div>
+            <div id="navbar-search">
+                <a href="">
+                    <img src="{% static 'images/lupa.png' %}" alt="">
+                </a>
+            </div>
+            <div id="navbar-logo">
+                <span>Real Estate</span>
+            </div>
+            <div id="navbar-links">
+                <a class="nav-link" href="">Item 1</a>
+                <a class="nav-link" href="">Item 2</a>
+                <a class="nav-link" href="">Item 3</a>
+                <a class="nav-link" href="">Item 4</a>
+                <a class="nav-link" href="">Item 5</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar-menu-dropdown" class="d-none">
+        <ul>
+            <li>
+                <a class="dropdown-link" href="">Pick 1</a>
+            </li>
+            <hr>
+            <li>
+                <a class="dropdown-link" href="">Pick 2</a>
+            </li>
+            <hr>
+            <li>
+                <a class="dropdown-link" href="">Pick 3</a>
+            </li>
+            <hr>
+            <li>
+                <a class="dropdown-link" href="">Pick 4</a>
+            </li>
+            <hr>
+            <li>
+                <a class="dropdown-link" href="">Pick 5</a>
+            </li>
+            <hr>
+        </ul>
+    </div>
+
     {% block content %}{% endblock content %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{% static 'base.js' %}"></script>
     {% block js %}{% endblock js %}
 </body>
 </html>
