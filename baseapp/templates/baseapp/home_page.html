@@ -4,6 +4,7 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'baseapp/baseapp.css' %}">
+    <link rel="stylesheet" href="{% static 'post/post_style.css' %}">
 {% endblock style %}
 
 
@@ -15,8 +16,26 @@ Home
 {% block content %}
 
 <img id="banner" src="{% static 'images/real_estate_banner.jpg' %}" alt="">
-<div class="container">
+<div class="container-fluid">
+    <div class="row" id="post-wall">
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
+        {% include 'post/post.html' %}
 
+    </div>
 </div>
 
 {% endblock content %}
