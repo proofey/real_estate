@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'post/post_details.css' %}">
+{% endblock style %}
+
+
+{% block title %}
+Post Details
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row post-details">
+        <h2>Title</h2>
+        <h6>Created</h6>
+        <img class="post-details-main-picture" src="/media/default_property.jpg" alt="">
+        <img class="post-details-picture" src="/media/default_property.jpg" alt="">
+        <img class="post-details-picture" src="/media/car.jpg" alt="">
+        <img class="post-details-picture" src="/media/amg.jpeg" alt="">
+        <img class="post-details-picture" src="/media/opel.jpeg" alt="">
+        <button class="previous-slide-btn" onclick="previous()">&lt</button>
+        <button class="next-slide-btn" onclick="next()">&gt</button>
+        <h4>Property Details</h4>
+        <hr>
+        <div id="left-side-property-details">
+            <h6>Price: <span id="property-price">120 000$</span></h6>
+            <h6>Offer type</h6>
+            <h6>Property type</h6>
+            <h6>Construction type</h6>
+            <h6>Location</h6>
+            <h6>Neighborhood</h6>
+            <h6>Square meters</h6>
+        </div>
+        <div id="rigth-side-property-details">
+            <h6>Rooms</h6>
+            <h6>Bathroom</h6>
+            <h6>Bedroom</h6>
+            <h6>Balcony</h6>
+            <h6>Floor</h6>
+            <h6>Parking</h6>
+            <h6>Garage</h6>
+            <h6>Basement</h6>
+            <h6>Garret</h6>
+            <h6>Heating</h6>
+        </div>
+        <br>
+        <br>
+        <h4>More information</h4>
+        <hr>
+        <h6>The information</h6>
+        <br>
+        <br>
+        <h4>For contact</h4>
+        <hr>
+        <h6>Contacts</h6>
+    </div>
+</div>
+
+{% endblock content %}
+
+
+{% block js %}
+    <script src="{% static 'post/post_details.js' %}"></script>
+{% endblock js %}
