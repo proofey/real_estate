@@ -1,4 +1,4 @@
-from email.policy import default
+from django.urls import reverse
 from django.db import models
 
 
@@ -65,6 +65,9 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} - {self.location} - {self.price}"
+
+    def get_absolute_url(self):
+        return reverse('post-details', args=(self.id,))
 
     class Meta:
         ordering = ['-created']
