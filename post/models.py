@@ -26,21 +26,28 @@ class Heating(models.Model):
     def __str__(self):
         return self.type
 
+class AvailableOptions(models.Model):
+    option = models.CharField('option', max_length=10)
+
+    def __str__(self):
+        return self.option
+
 class Post(models.Model):
     title = models.CharField('Title', max_length=150)
     location = models.CharField('Location', max_length=50)
     price = models.IntegerField('Price')
     neighborhood = models.CharField('Neighborhood', max_length=60, blank=True)
     square_meters = models.IntegerField('Square meters')
-    number_of_rooms = models.IntegerField('Number of rooms', null=True, blank=True)
-    bathroom = models.IntegerField('Bathroom', null=True, blank=True)
-    bedroom = models.IntegerField('Bedroom', null=True, blank=True)
-    balcony = models.IntegerField('Balcony', null=True, blank=True)
-    floor = models.IntegerField('Floor', null=True, blank=True)
-    parking = models.BooleanField('Parking', default=False, null=True, blank=True)
-    garage = models.BooleanField('Garage', default=False, null=True, blank=True)
-    basement = models.BooleanField('Basement', default=False, null=True, blank=True)
-    garret = models.BooleanField('Garret', default=False, null=True, blank=True)
+    number_of_rooms = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='number_of_doors')
+    bathroom = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='bathroom')
+    bedroom = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='bedroom')
+    balcony = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='balcony')
+    floor = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='floor')
+    floors = models.IntegerField('Floors', null=True, blank=True)
+    parking = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='parking')
+    garage = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='garage')
+    basement = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='basement')
+    garret = models.ForeignKey(AvailableOptions, on_delete=models.PROTECT, null=True, blank=True, related_name='garret')
     created = models.DateTimeField('Created', auto_now_add=True)
     more_information = models.TextField('More information')
     for_contact = models.CharField('For contact', max_length=100, null=True)

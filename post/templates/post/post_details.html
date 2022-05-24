@@ -15,13 +15,14 @@ Post Details
 
 <div class="container">
     <div class="row post-details">
-        <h2>Title</h2>
-        <h6>Created</h6>
-        <img class="post-details-main-picture" src="/media/default_property.jpg" alt="">
-        <img class="post-details-picture" src="/media/default_property.jpg" alt="">
-        <img class="post-details-picture" src="/media/car.jpg" alt="">
-        <img class="post-details-picture" src="/media/amg.jpeg" alt="">
-        <img class="post-details-picture" src="/media/opel.jpeg" alt="">
+        <h2>{{ post.title }}</h2>
+        <h6>{{ post.created }}</h6>
+        <img class="post-details-main-picture" src="{{ post.main_picture.url }}" alt="">
+        <img class="post-details-picture" src="{{ post.picture_1.url }}" alt="">
+        <img class="post-details-picture" src="{{ post.picture_2.url }}" alt="">
+        <img class="post-details-picture" src="{{ post.picture_3.url }}" alt="">
+        <img class="post-details-picture" src="{{ post.picture_4.url }}" alt="">
+        <img class="post-details-picture" src="{{ post.picture_5.url }}" alt="">
         <div id="post-details-slides">
             <button class="previous-slide-btn" onclick="previous()">&lt</button>
             <button class="next-slide-btn" onclick="next()">&gt</button>
@@ -29,36 +30,36 @@ Post Details
         <h4>Property Details</h4>
         <hr>
         <div id="left-side-property-details">
-            <h6>Price: <span id="property-price">120 000$</span></h6>
-            <h6>Offer type</h6>
-            <h6>Property type</h6>
-            <h6>Construction type</h6>
-            <h6>Location</h6>
-            <h6>Neighborhood</h6>
-            <h6>Square meters</h6>
+            <h6>Price: <span id="property-price">{{ post.price }}$</span></h6>
+            <h6>Offer type: {{ post.offer_type }}</h6>
+            <h6>Property type: {{ post.property_type }}</h6>
+            <h6>Construction type: {{ post.construction_type }}</h6>
+            <h6>Location: {{ post.location }}</h6>
+            <h6>Neighborhood: {{ post.neighborhood }}</h6>
+            <h6>Square meters: {{ post.square_meters }}</h6>
         </div>
         <div id="rigth-side-property-details">
-            <h6>Rooms</h6>
-            <h6>Bathroom</h6>
-            <h6>Bedroom</h6>
-            <h6>Balcony</h6>
-            <h6>Floor</h6>
-            <h6>Parking</h6>
-            <h6>Garage</h6>
-            <h6>Basement</h6>
-            <h6>Garret</h6>
-            <h6>Heating</h6>
+            <h6>Rooms: {{ post.number_of_rooms }}</h6>
+            <h6>Bathroom: {{ post.bathroom }}</h6>
+            <h6>Bedroom: {{ post.bedroom }}</h6>
+            <h6>Balcony: {{ post.balcony }}</h6>
+            <h6>Floor: {{ post.floor }}</h6>
+            <h6>Parking: {{ post.parking }}</h6>
+            <h6>Garage: {{ post.garage }}</h6>
+            <h6>Basement: {{ post.basement }}</h6>
+            <h6>Garret: {{ post.garret }}</h6>
+            <h6>Heating: {{ post.heating }}</h6>
         </div>
         <br>
         <br>
         <h4>More information</h4>
         <hr>
-        <h6>The information</h6>
+        <h6>{{ post.more_information }}</h6>
         <br>
         <br>
         <h4>For contact</h4>
         <hr>
-        <h6>Contacts</h6>
+        <h6>{{ post.for_contact }}</h6>
     </div>
 </div>
 

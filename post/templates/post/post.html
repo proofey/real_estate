@@ -1,8 +1,12 @@
 <div class="post">
-    <img class="post-picture" src="/media/default_property.jpg" alt="">
-    <h2 class="post-title">Title</h2>
-    <h6>Offer</h6>
-    <h6>Location/Neighborhood</h6>
-    <h6>Square Meters</h6>
-    <h6>Price</h6>
+    <a id="redirect-to-details" href="{{ post.get_absolute_url }}">
+        <img class="post-picture" src="{{ post.main_picture.url }}" alt="">
+        <h2>{{ post.title }}</h2>
+        <h6>Offer type: {{ post.offer_type }}</h6>
+        {% if post.neighborhood %}
+            <h6>Neighborhood: {{ post.neighborhood }}</h6>
+        {% endif %}
+        <h6>Square meters: {{ post.square_meters }}</h6>
+        <h6>Price: {{ post.pricec }}</h6>
+    </a>
 </div>

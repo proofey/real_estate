@@ -18,23 +18,9 @@ Home
 <img id="banner" src="{% static 'images/real_estate_banner.jpg' %}" alt="">
 <div class="container-fluid">
     <div class="row" id="post-wall">
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-        {% include 'post/post.html' %}
-
+        {% for post in page_obj.object_list %}
+            {% include 'post/post.html' %}
+        {% endfor %}
     </div>
 </div>
 

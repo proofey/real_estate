@@ -1,3 +1,4 @@
+// Toggle navbar menu
 const navbarMenuToggle = document.getElementById('navbar-menu-toggle');
 navbarMenuToggle.addEventListener('click', (e)=> {
     e.preventDefault()

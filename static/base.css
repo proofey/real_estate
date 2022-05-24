@@ -132,3 +132,8 @@ body{
 ul{
     list-style-type: none;
 }
+#redirect-to-details{
+    text-decoration: none;
+    color: black;
+    cursor:grab;
+}
