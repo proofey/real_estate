@@ -2,7 +2,7 @@
     <a id="redirect-to-details" href="{{ post.get_absolute_url }}">
         <img class="post-picture" src="{{ post.main_picture.url }}" alt="">
         <h2>{{ post.title }}</h2>
-        <h6>Offer type: {{ post.offer_type }}</h6>
+        <h6>Offer: {{ post.offer_type }}</h6>
         {% if post.neighborhood %}
             <h6>Neighborhood: {{ post.neighborhood }}</h6>
         {% endif %}

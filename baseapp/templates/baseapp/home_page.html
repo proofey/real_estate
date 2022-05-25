@@ -22,6 +22,24 @@ Home
             {% include 'post/post.html' %}
         {% endfor %}
     </div>
+
+    <div class="pagination">
+        <span>
+            {% if page_obj.has_previous %}
+                <a class="pagination-btn" href="?page=1">&laquo; first</a>
+                <a class="pagination-btn" href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="pagination-current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a class="pagination-btn" href="?page={{ page_obj.next_page_number }}">next</a>
+                <a class="pagination-btn" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 </div>
 
 {% endblock content %}

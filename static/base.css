@@ -141,3 +141,28 @@ ul{
     color: black;
     cursor:grab;
 }
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.pagination-btn{
+    border: none;
+    text-decoration: none;
+    color: #000000;
+    border: 3px solid goldenrod;
+    padding: 10px;
+}
+.pagination-current{
+    border: 3px solid goldenrod;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.pagination-btn:hover{
+    color: #000000;
+    background: -moz-linear-gradient(45deg, #DAA520 0%, #FFF8BE 100%, #DAA520 100%);
+    background: -webkit-linear-gradient(45deg, #DAA520 0%, #FFF8BE 100%, #DAA520 100%);
+    background: linear-gradient(45deg, #DAA520 0%, #FFF8BE 100%, #DAA520 100%);
+}
