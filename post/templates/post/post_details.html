@@ -17,7 +17,8 @@ Post Details
     <div class="row post-details">
         <h2>{{ post.title }}</h2>
         <h6>{{ post.created }}</h6>
-        <img class="post-details-main-picture" src="{{ post.main_picture.url }}" alt="">
+        <img class="post-details-main-picture" src="" alt="">
+        <img class="post-details-picture" src="{{ post.main_picture.url }}" alt="">
         <img class="post-details-picture" src="{{ post.picture_1.url }}" alt="">
         <img class="post-details-picture" src="{{ post.picture_2.url }}" alt="">
         <img class="post-details-picture" src="{{ post.picture_3.url }}" alt="">
@@ -27,6 +28,7 @@ Post Details
             <button class="previous-slide-btn" onclick="previous()">&lt</button>
             <button class="next-slide-btn" onclick="next()">&gt</button>
         </div>
+        <span id="slide-counter"></span>
         <h4>Property Details</h4>
         <hr>
         <div id="left-side-property-details">

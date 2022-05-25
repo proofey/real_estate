@@ -12,12 +12,14 @@ let currentPictureIndex = 0
 function previous(){
     if(currentPictureIndex <= 0) currentPictureIndex = allImages.length;
     currentPictureIndex--;
+    slideCounter();
     return setPicture();
 }
 
 function next(){
     if(currentPictureIndex >= allImages.length - 1) currentPictureIndex = -1;
     currentPictureIndex++;
+    slideCounter();
     return setPicture();
 }
 
@@ -27,3 +29,11 @@ function setPicture(){
     postDetailsMainPicture.setAttribute('src', src);
     return postDetailsMainPicture.setAttribute('src', src);
 }
+setPicture()
+
+// Count the pictures '1 of 10' etc
+function slideCounter(){
+    let counter = document.getElementById('slide-counter');
+    return counter.innerText = `${currentPictureIndex + 1} of ${allImages.length}`;
+};
+slideCounter();
