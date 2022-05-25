@@ -58,17 +58,17 @@ class Post(models.Model):
     construction_type = models.ForeignKey(ConstructionType, on_delete=models.PROTECT, null=True, blank=True)
     heating = models.ForeignKey(Heating, on_delete=models.PROTECT, null=True, blank=True)
 
-    main_picture = models.ImageField('Main picture', upload_to='property_pictures', default='default_property.jpg')
-    picture_1 = models.ImageField('Picture 1', upload_to='property_pictures', default='default_property.jpg')
-    picture_2 = models.ImageField('Picture 2', upload_to='property_pictures', default='default_property.jpg')
-    picture_3 = models.ImageField('Picture 3', upload_to='property_pictures', default='default_property.jpg')
-    picture_4 = models.ImageField('Picture 4', upload_to='property_pictures', default='default_property.jpg')
-    picture_5 = models.ImageField('Picture 5', upload_to='property_pictures', default='default_property.jpg')
-    picture_6 = models.ImageField('Picture 6', upload_to='property_pictures', default='default_property.jpg')
-    picture_7 = models.ImageField('Picture 7', upload_to='property_pictures', default='default_property.jpg')
-    picture_8 = models.ImageField('Picture 8', upload_to='property_pictures', default='default_property.jpg')
-    picture_9 = models.ImageField('Picture 9', upload_to='property_pictures', default='default_property.jpg')
-    picture_10 = models.ImageField('Picture 10', upload_to='property_pictures', default='default_property.jpg')
+    main_picture = models.ImageField('Main picture', upload_to='property_pictures',  default='default_property.jpg')
+    picture_1 = models.ImageField('Picture 1', upload_to='property_pictures', null=True, blank=True)
+    picture_2 = models.ImageField('Picture 2', upload_to='property_pictures', null=True, blank=True)
+    picture_3 = models.ImageField('Picture 3', upload_to='property_pictures', null=True, blank=True)
+    picture_4 = models.ImageField('Picture 4', upload_to='property_pictures', null=True, blank=True)
+    picture_5 = models.ImageField('Picture 5', upload_to='property_pictures', null=True, blank=True)
+    picture_6 = models.ImageField('Picture 6', upload_to='property_pictures', null=True, blank=True)
+    picture_7 = models.ImageField('Picture 7', upload_to='property_pictures', null=True, blank=True)
+    picture_8 = models.ImageField('Picture 8', upload_to='property_pictures', null=True, blank=True)
+    picture_9 = models.ImageField('Picture 9', upload_to='property_pictures', null=True, blank=True)
+    picture_10 = models.ImageField('Picture 10', upload_to='property_pictures', null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} - {self.location} - {self.price}"
