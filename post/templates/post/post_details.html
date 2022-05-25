@@ -18,12 +18,38 @@ Post Details
         <h2>{{ post.title }}</h2>
         <h6>{{ post.created }}</h6>
         <img class="post-details-main-picture" src="" alt="">
+        
         <img class="post-details-picture" src="{{ post.main_picture.url }}" alt="">
-        <img class="post-details-picture" src="{{ post.picture_1.url }}" alt="">
-        <img class="post-details-picture" src="{{ post.picture_2.url }}" alt="">
-        <img class="post-details-picture" src="{{ post.picture_3.url }}" alt="">
-        <img class="post-details-picture" src="{{ post.picture_4.url }}" alt="">
-        <img class="post-details-picture" src="{{ post.picture_5.url }}" alt="">
+        {% if post.picture_1 %}
+            <img class="post-details-picture" src="{{ post.picture_1.url }}" alt="">
+        {% endif %}
+        {% if post.picture_2 %}
+            <img class="post-details-picture" src="{{ post.picture_2.url }}" alt="">
+        {% endif %}
+        {% if post.picture_3 %}
+            <img class="post-details-picture" src="{{ post.picture_3.url }}" alt="">
+        {% endif %}
+        {% if post.picture_4 %}
+            <img class="post-details-picture" src="{{ post.picture_4.url }}" alt="">
+        {% endif %}
+        {% if post.picture_5 %}
+            <img class="post-details-picture" src="{{ post.picture_5.url }}" alt="">
+        {% endif %}
+        {% if post.picture_6 %}
+            <img class="post-details-picture" src="{{ post.picture_6.url }}" alt="">
+        {% endif %}
+        {% if post.picture_7 %}
+            <img class="post-details-picture" src="{{ post.picture_7.url }}" alt="">
+        {% endif %}
+        {% if post.picture_8 %}
+            <img class="post-details-picture" src="{{ post.picture_8.url }}" alt="">
+        {% endif %}
+        {% if post.picture_9 %}
+            <img class="post-details-picture" src="{{ post.picture_9.url }}" alt="">
+        {% endif %}
+        {% if post.picture_10 %}
+            <img class="post-details-picture" src="{{ post.picture_10.url }}" alt="">
+        {% endif %}
         <div id="post-details-slides">
             <button class="previous-slide-btn" onclick="previous()">&lt</button>
             <button class="next-slide-btn" onclick="next()">&gt</button>
