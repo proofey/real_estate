@@ -31,33 +31,74 @@ Post Details
         <hr>
         <div id="left-side-property-details">
             <h6>Price: <span id="property-price">{{ post.price }}$</span></h6>
-            <h6>Offer type: {{ post.offer_type }}</h6>
-            <h6>Property type: {{ post.property_type }}</h6>
-            <h6>Construction type: {{ post.construction_type }}</h6>
+            <h6>Offer: {{ post.offer_type }}</h6>
+            <h6>Property: {{ post.property_type }}</h6>
+
+            {% if post.construction_type is not None %}
+                <h6>Construction: {{ post.construction_type }}</h6>
+            {% endif %}
+
             <h6>Location: {{ post.location }}</h6>
-            <h6>Neighborhood: {{ post.neighborhood }}</h6>
+
+            {% if post.neighborhood != '' %}
+                <h6>Neighborhood: {{ post.neighborhood }}</h6>
+            {% endif %}
+
             <h6>Square meters: {{ post.square_meters }}</h6>
         </div>
         <div id="rigth-side-property-details">
-            <h6>Rooms: {{ post.number_of_rooms }}</h6>
-            <h6>Bathroom: {{ post.bathroom }}</h6>
-            <h6>Bedroom: {{ post.bedroom }}</h6>
-            <h6>Balcony: {{ post.balcony }}</h6>
-            <h6>Floor: {{ post.floor }}</h6>
-            <h6>Parking: {{ post.parking }}</h6>
-            <h6>Garage: {{ post.garage }}</h6>
-            <h6>Basement: {{ post.basement }}</h6>
-            <h6>Garret: {{ post.garret }}</h6>
-            <h6>Heating: {{ post.heating }}</h6>
+            {% if post.number_of_rooms is not None %}
+                <h6>Rooms: {{ post.number_of_rooms }}</h6>
+            {% endif %}
+
+            {% if post.bathroom is not None %}
+                <h6>Bathroom: {{ post.bathroom }}</h6>
+            {% endif %}
+
+            {% if post.bedroom is not None %}
+                <h6>Bedroom: {{ post.bedroom }}</h6>
+            {% endif %}
+
+            {% if post.balcony is not None %}
+                <h6>Balcony: {{ post.balcony }}</h6>
+            {% endif %}
+
+            {% if post.floor is not None %}
+                <h6>Floor: {{ post.floor }}</h6>
+            {% endif %}
+
+            {% if post.floors is not None %}
+                <h6>Floors: {{ post.floors }}</h6>
+            {% endif %}
+
+            {% if post.parking is not None %}
+                <h6>Parking: {{ post.parking }}</h6>
+            {% endif %}
+            
+            {% if post.garage is not None %}
+                <h6>Garage: {{ post.garage }}</h6>
+            {% endif %}
+            
+            {% if post.basement is not None %}
+                <h6>Basement: {{ post.basement }}</h6>
+            {% endif %}
+
+            {% if post.garret is not None %}
+                <h6>Garret: {{ post.garret }}</h6>
+            {% endif %}
+
+            {% if post.heating is not None %}
+                <h6>Heating: {{ post.heating }}</h6>
+            {% endif %}
         </div>
         <br>
         <br>
-        <h4>More information</h4>
+        <h4>More Information</h4>
         <hr>
         <h6>{{ post.more_information }}</h6>
         <br>
         <br>
-        <h4>For contact</h4>
+        <h4>For Contact</h4>
         <hr>
         <h6>{{ post.for_contact }}</h6>
     </div>
