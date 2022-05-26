@@ -12,3 +12,22 @@
     object-position: center;
     box-shadow: 0px 0px 6px 5px black;
 }
+#login-form{
+    text-align: center;
+    border: 2px solid goldenrod;
+    padding: 50px;
+    width: 300px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.my-btn{
+    border: 2px solid goldenrod;
+    background-color: white;
+    color: black;
+    margin-top: 20px;
+}
+#id_username, #id_password{
+    width: 200px;
+    margin: auto;
+}

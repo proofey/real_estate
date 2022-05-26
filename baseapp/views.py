@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.core.paginator import Paginator
 from post.models import Post
 from . forms import LoginForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 def home_page(request):
@@ -30,3 +30,7 @@ def login_request(request):
     return render(request, 'baseapp/login.html', {
         'form': form
     })
+
+def logout_request(request):
+    logout(request)
+    return redirect('home-page')

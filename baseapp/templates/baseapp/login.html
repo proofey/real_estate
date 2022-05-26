@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 
 
-{% block style %}{% endblock style %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'baseapp/baseapp.css' %}">
+{% endblock style %}
 
 
 {% block title %}
@@ -11,11 +15,13 @@ Login
 
 {% block content %}
 
-<form action="{% url 'login' %}" method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Log In</button>
-</form>
+<div class="container">
+    <form id="login-form" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="my-btn" type="submit">Log In</button>
+    </form>
+</div>
 
 {% endblock content %}
 
