@@ -10,12 +10,18 @@
         height: 50px;
         margin-top: 50%;
     }
+    #more-information-field{
+        width: 290px;
+    }
 }
 @media only screen and (min-width: 350px) and (max-width: 599px){
     .previous-slide-btn, .next-slide-btn{
         width: 40px;
         height: 50px;
         margin-top: 40%;
+    }
+    #more-information-field{
+        width: 350px;
     }
 }
 @media only screen and (min-width: 600px){
@@ -38,15 +44,24 @@
     #rigth-side-property-details{
         width: 50%;
     }
+    #more-information-field{
+        width: 690px;
+    }
 }
 @media only screen and (min-width: 922px){
     .post-details-main-picture{
         height: 750px;
     }
+    #more-information-field{
+        width: 930px;
+    }
 }
 @media only screen and (min-width: 1200px){
     .post-details-main-picture{
-        height: 950px;
+        height: 850px;
+    }
+    #more-information-field{
+        width: 1290px;
     }
 }
 
