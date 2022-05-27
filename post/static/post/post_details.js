@@ -37,3 +37,16 @@ function slideCounter(){
     return counter.innerText = `${currentPictureIndex + 1} of ${allImages.length}`;
 };
 slideCounter();
+
+// Confirm delete post
+const deletePostBtn = document.getElementById('delete-post');
+deletePostBtn.addEventListener('click', e =>{
+    e.preventDefault();
+    let confirmDeleteBox = document.querySelector('.confirm-delete');
+    confirmDeleteBox.classList.remove('d-none');
+    let deletePostNo = document.getElementById('delete-post-no');
+    deletePostNo.addEventListener('click', e=>{
+        e.preventDefault();
+        confirmDeleteBox.classList.add('d-none');
+    });
+});

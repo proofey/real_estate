@@ -23,3 +23,9 @@ def new_post(request):
     return render(request, 'post/new_post.html', {
         'form': form
     })
+
+def delete_post(request, id: int):
+    post = Post.objects.get(id=id)
+    if request.user.is_authenticated:
+        post.delete()
+        return redirect('home-page')
