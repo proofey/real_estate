@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static  'post/post_details.css' %}">
+    <link rel="stylesheet" href="{% static  'post/new_post.css' %}">
+{% endblock style %}
+
+
+{% block title %}
+New post
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+     <form action="{% url 'update-post' post.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row post-details">
+            <h2>Title*: {{ form.title }}</h2>
+            {% if post.main_picture is None %}
+                <img class="post-details-main-picture" src="/media/default_property.jpg" alt="">
+            {% else %}
+                <img class="post-details-main-picture" src="{{ post.main_picture.url }}" alt="">
+            {% endif %}
+            <h6>Attach Preview Picture: {{ form.main_picture }}</h6>
+            <button id="attach-more-pictures-btn"><h6>Attach More Pictures</h6></button>
+            <div id="attach-more-pictures" class="d-none">
+                <ul id="attach-more-pictures-dropdown">
+                    <li>
+                        <h6>{{ form.picture_1 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_2 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_3 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_4 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_5 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_6 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_7 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_8 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_9 }}</h6>
+                    </li>
+                    <li>
+                        <h6>{{ form.picture_10 }}</h6>
+                    </li>
+    
+                </ul>
+            </div>
+            <h4>Property Details</h4>
+            <hr>
+            <div id="left-side-property-details">
+                <h6>Price*: <span id="property-price">{{ form.price }}$</span></h6>
+                <h6>Offer*: {{ form.offer_type }}</h6>
+                <h6>Property*: {{ form.property_type }}</h6>
+                <h6>Construction: {{ form.construction_type }}</h6>
+                <h6>Location*: {{ form.location }}</h6>
+                <h6>Neighborhood: {{ form.neighborhood }}</h6>
+                <h6>Square meters*: {{ form.square_meters }}</h6>
+            </div>
+            <div id="rigth-side-property-details">
+                <h6>Rooms: {{ form.number_of_rooms }}</h6>
+                <h6>Bathroom: {{ form.bathroom }}</h6>
+                <h6>Bedroom: {{ form.bedroom }}</h6>
+                <h6>Balcony: {{ form.balcony }}</h6>
+                <h6>Floor: {{ form.floor }}</h6>
+                <h6>Floors: {{ form.floors }}</h6>
+                <h6>Parking: {{ form.parking }}</h6>
+                <h6>Garage: {{ form.garage }}</h6>
+                <h6>Basement: {{ form.basement }}</h6>
+                <h6>Garret: {{ form.garret }}</h6>
+                <h6>Heating: {{ form.heating }}</h6>
+            </div>
+            <br>
+            <br>
+            <h4>More Information*</h4>
+            <hr>
+            <h6 id="more-information-field">{{ form.more_information }}</h6>
+            <br>
+            <br>
+            <h4>For Contact</h4>
+            <hr>
+            <h6>{{ form.for_contact }}</h6>
+            <br>
+            <button id="submit-new-post" type="submit">Update Post</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+
+
+{% block js %}
+    <script src="{% static 'post/new_post.js' %}"></script>
+{% endblock js %}

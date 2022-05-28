@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from . models import Post
 from . forms import PostForm
 from django.contrib.auth.decorators import login_required
@@ -29,3 +30,17 @@ def delete_post(request, id: int):
     if request.user.is_authenticated:
         post.delete()
         return redirect('home-page')
+
+def update_post(request, id: int):
+    post = Post.objects.get(id=id)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('post-details', args=(post.id,)))
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'post/update_post.html', {
+        'form': form,
+        'post': post
+    })
