@@ -25,12 +25,14 @@ def new_post(request):
         'form': form
     })
 
+@login_required
 def delete_post(request, id: int):
     post = Post.objects.get(id=id)
     if request.user.is_authenticated:
         post.delete()
         return redirect('home-page')
 
+@login_required
 def update_post(request, id: int):
     post = Post.objects.get(id=id)
     if request.method == 'POST':

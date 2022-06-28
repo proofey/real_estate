@@ -9,3 +9,17 @@ navbarMenuToggle.addEventListener('click', (e)=> {
         navbarMenuDropdown.classList.add('d-none');
     }
 });
+
+// Toggle search bar
+const searchBarToggle = document.getElementById('search-bar-toggle');
+searchBarToggle.addEventListener('click', (e)=> {
+    e.preventDefault();
+
+    const searchBar = document.querySelector('.search');
+
+    if(searchBar.classList.contains('hidden')){
+        searchBar.classList.remove('hidden')
+    }else{
+        searchBar.classList.add('hidden')
+    };
+});

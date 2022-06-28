@@ -17,6 +17,15 @@ Home
 
 <img id="banner" src="{% static 'images/real_estate_banner.jpg' %}" alt="">
 <div class="container-fluid">
+
+    <div class="search hidden">
+        <form id="search-form" action="{% url 'search' %}">
+            {% csrf_token %}
+            {{ search_form }}
+            <button id="search-btn" type="submit">Search</button>
+        </form>
+    </div>
+
     <div class="row" id="post-wall">
         {% for post in page_obj.object_list %}
             {% include 'post/post.html' %}

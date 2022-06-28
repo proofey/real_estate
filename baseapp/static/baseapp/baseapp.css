@@ -2,7 +2,55 @@
     #banner{
         display: none;
     }
+    #id_offer_type, #id_property_type, #id_location, #id_minimum_price, #id_maximum_price{
+        width: 90%;
+    }
+    #search-btn{
+        width: 90%;
+    }
 }
+@media only screen and (min-width: 600px){
+    #id_offer_type, #id_property_type{
+        width: 28%;
+    }
+    #id_location, #id_minimum_price, #id_maximum_price{
+        width: 61%;
+        margin-top: 5px;
+    }
+    #search-btn{
+        width: 50%;
+        margin-right: 20%;
+    }
+}
+@media only screen and (max-width: 768px){
+    .hidden{
+        display: none;
+    }
+}
+@media only screen and (min-width: 922px){
+    #id_offer_type, #id_property_type{
+        width: 35%;
+    }
+    #id_location, #id_minimum_price, #id_maximum_price{
+        width: 70%;
+        margin-top: 5px;
+    }
+}
+@media only screen and (min-width: 1200px){
+    #id_offer_type, #id_property_type{
+        width: 10%;
+    }
+    #id_location, #id_minimum_price, #id_maximum_price{
+        width: 10%;
+        margin-top: 5px;
+    }
+    #search-btn{
+        width: 25%;
+        margin-right: 33%;
+    }
+}
+
+
 
 #banner{
     margin-top: 5px;
@@ -21,13 +69,27 @@
     margin-left: auto;
     margin-right: auto;
 }
-.my-btn{
+.my-btn, #search-btn{
     border: 2px solid goldenrod;
     background-color: white;
     color: black;
     margin-top: 20px;
 }
+#search-btn:hover{
+    box-shadow: 0px 0px 6px 5px goldenrod;
+}
 #id_username, #id_password{
     width: 200px;
     margin: auto;
+}
+.search{
+    border: 2px solid goldenrod;
+    margin-top: 20px;
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 9%;
+    background: -moz-linear-gradient(-45deg, #DAA520 0%, #FFF8BE 50%, #DAA520 100%);
+    background: -webkit-linear-gradient(-45deg, #DAA520 0%, #FFF8BE 50%, #DAA520 100%);
+    background: linear-gradient(135deg, #DAA520 0%, #FFF8BE 50%, #DAA520 100%);
 }
